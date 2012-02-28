@@ -183,10 +183,35 @@ extracted by the following steps:
     </li><li>If <var>hatena-id</var> ends by a <code>/</code> character, delete it from <var>hatena-id</var>.
     </li><li>Otherwise, return nothing and abort these steps.
     </li><li>Replace <code>%40</code> in <var>hatena-id</var> by <code>@</code>.
-    </li><li>If <var>hatena-id</var> contains characters other than <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and <code>@</code>, return nothing and abort these steps.
+
+    </li><li>If <var>hatena-id</var> contains a character different from
+    any of <code>0</code>-<code>9</code>,
+    <code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>,
+    <code>-</code>, <code>_</code>, and <code>@</code>, return nothing
+    and abort these steps.
+
+    </li><li>If <var>hatena-id</var> is the empty string, return nothing
+    and abort these steps.
+
     </li><li>Return <var>hatena-id</var>.
   </li></ol>
-</div>
+
+  <div class="note memo">
+
+    <p>Please note that the Hatena ID returned by these steps might or
+    might not be a valid ID.  Please also note that an author can
+    markup anyone else's Hatena ID as the author of the document.
+    There is no formal way to ensure that the <a href=#hatena-id-link>Hatena ID
+    Link</a> is correct or not.
+
+  </p></div>
+
+<p>This document does not define how to process a document containing
+multiple <a href=#hatena-id-link title="Hatena ID Link">Hatena ID Links</a>.  Future
+version of this document might define the processing model for
+documents with mutliple authors.
+
+</p></div>
 
 <div class=section>
 <h2 id=example><span class=secno>5 </span>Example</h2>
