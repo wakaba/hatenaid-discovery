@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html class="formal-specification anolis" lang=en>
+<meta charset=utf-8>
+
+<title>Hatena ID Discovery Lite</title>
+
+<link rel=stylesheet href="http://suika.fam.cx/www/style/html/spec">
+
+<div class="header">
+
+<h1 class="no-toc no-num">Hatena ID Discovery Lite</h1>
+
+<h2 class="no-toc no-num">Living Standard [DATE]</h2>
+
+<dl class="versions-uri">
+<dt>Latest Version</dt>
+  <dd><code class="URI">&lt;<a href="http://example.com/"
+      >http://example.com/</a>&gt;</code></dd>
+<dt>Version History</dt>
+  <dd><code class=URI>&lt;<a href=""></a>&gt;</code></dd>
+<dt id=author>Author</dt>
+  <dd><a href="http://www.hatena.com/wakabatan/" rel="author"
+      lang=ja>Wakaba (id:wakabatan)</a>
+  <code class="mail">&lt;<a href="mailto:wakabatan@hatena.ne.jp" rel="author"
+      >wakabatan@hatena.ne.jp</a>&gt;</code></dd>
+</dl>
+
+<p class="copyright" lang="en">&#xA9; 2012 <a
+href="http://www.hatena.com/contact">Hatena</a>.  You are granted a
+license to use, reproduce and create derivative works of this
+document.
+
+</div>
+
+<div class=section id=abstract>
+<h2 class="no-toc no-num">Abstract</h2>
+
+<p>This document describes how to embed the Hatena ID of the author to
+HTML pages and how to extract Hatena ID from such annotations.
+
+</div>
+
+<div id="status" class=section>
+<h2 class="no-toc no-num">Status of this document</h2>
+
+<p class=section-info><em>This section describes the status of this
+document at the time of its publication.  Other documents might
+supersede this document.</em></p>
+
+<p>This document <!--is a <!- - working draft - -> technical
+specification, produced as part of ....  It--> might be updated,
+replaced, or obsoleted by other documents at any time.<!-- It is
+inappropriate to cite this document as other than <q>work in
+progress</q>. -->
+
+<p>Comments on this document are welcome and may be sent to the <a
+href="#author">author</a>.</p>
+
+<p>Translations of thie document might be available.  The English
+version of the document is the only normative version.</p>
+
+</div>
+
+<div class=section>
+<h2 class="no-toc no-num">Table of contents</h2>
+
+<!-- toc -->
+</div>
+
+<div class=section>
+<h2>Introduction</h2>
+
+<p class=section-info><em>This section is non‐normative.</em>
+
+<p>This document defines <dfn>Hatena ID Discovery Lite</dfn>, a
+lightweight syntax to embed the Hatena ID of the author to HTML pages
+and how to extract Hatena ID from such annotations.
+
+<p>Although there is another technique to embed Hatena ID of the
+author, i.e. <a
+href="http://b.hatena.ne.jp/help/nocomment#pageauth">Account
+Auto-Discovery</a>, its terrible syntax makes it difficult to embed
+and to extract the Hatena ID from Web pages, and is rarely used these
+days.
+
+<p>Unlike Account Auto-Discovery, <span>Hatena ID Discovery
+Lite</span> provides a simple, both easy-to-write and easy-to-parse
+syntax for Hatena ID annotation, by defining the usage of standard
+HTML elements and attributes for this particular purpose.
+
+</div>
+
+<div class=section>
+<h2>Conformance</h2>
+
+<p>The keywords "<em class=rfc2119>MUST</em>", "<em class=rfc2119>MUST
+NOT</em>", and "<em class=rfc211>MAY</em>" in the normative parts of
+this document are to be interpreted as described in <a
+href="http://tools.ietf.org/html/rfc2119">RFC 2119</a> <cite
+class="bibref normative">[<a href="#ref-RFC2119">RFC2119</a>]</cite>.
+
+<p>Requirements phrased in the imperative as part of algorithms (such
+as "strip any leading space characters" or "return false and abort
+these steps") are to be interpreted with the meaning of the key word
+("<em class=rfc2119>MUST</em>", "<em class=rfc2119>MAY</em>", etc)
+used in introducing the algorithm.
+
+<p>Conformance requirements phrased as algorithms or specific steps
+may be implemented in any manner, so long as the end result is
+equivalent. (In particular, the algorithms defined in this
+specification are intended to be easy to follow, and not intended to
+be performant.)
+
+<p>User agents may impose implementation-specific limits on otherwise
+unconstrained inputs, e.g. to prevent denial of service attacks, to
+guard against running out of memory, or to work around
+platform-specific limitations.
+
+<p>Some conformance requirements are phrased as requirements on
+elements or attributes. Such requirements fall into two categories:
+those describing content model restrictions, and those describing
+implementation behavior. Those in the former category are requirements
+on documents and authoring tools. Those in the second category are
+requirements on user agents. Similarly, some conformance requirements
+are phrased as requirements on authors; such requirements are to be
+interpreted as conformance requirements on the documents that authors
+produce. (In other words, this specification does not distinguish
+between conformance criteria on authors and conformance criteria on
+documents.)
+
+</div>
+
+<div class=section>
+<h2>Authoring requirements</h2>
+
+<p>A <dfn>Hatena ID link</dfn> is an HTML element representing the
+Hatena ID of the author of the content described by the element.
+
+<p>A <span>Hatena ID link</span> <em class=rfc2119>MUST</em> be an
+<code>a</code>, <code>area</code>, or <code>link</code> element <cite
+class="bibref normative">[<a href="#ref-HTML">HTML</a>]</cite>.
+
+<p>The <code>rel</code> attribute of a <code>Hatena ID link</code> <em
+class=rfc2119>MUST</em> contain at least one of following <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">link
+types</a>:
+<ul>
+  <li><code>author</code>
+  <li><code>me</code>
+</ul>
+
+<p>The <code>href</code> attribute of a <code>Hatena ID link</code>
+<em class=rfc2119>MUST</em> have one of the following values:
+
+<ul>
+  <li><code>http://www.hatena.ne.jp/<var>hatena-id</var>/</code>
+  <li><code>http://www.hatena.com/<var>hatena-id</var>/</code>
+</ul>
+
+... where <var>hatena-id</var> is the Hatena ID of the author.  Any
+<code>@</code> character in <var>hatena-id</var> <em
+class=rfc2119>MAY</em> be percent-encoded.  The other characters in
+<var>hatena-id</var> <em class=rfc2119>MUST NOT</em> be
+percent-encoded.
+
+</div>
+
+<div class=section>
+<h2>Implementation requirements</h2>
+
+<p>How to parse <code>rel</code> attribute values is <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">defined
+in the HTML Standard</a>.  Please note that <code>rel</code> attribute
+values are ASCII case-insensitive and might contain more than one
+values.
+
+<p>The Hatena ID of the author <em class=rfc2119>MUST</em> be
+extracted by the following steps:
+
+  <ol>
+    <li>If the element does not have the <code>href</code> attribute, return nothing and abort these steps.
+    <li>Let <var>hatena-id</var> be the <code>href</code> attribute value.
+    <li>If <var>hatena-id</var> prefix-matches <code>http://www.hatena.ne.jp/</code> literally, delete it from <var>hatena-id</var>.
+    <li>Otherwise, if <var>hatena-id</var> prefix-matches <code>http://www.hatena.com/</code> literally, delete it from <var>hatena-id</var>.
+    <li>Otherwise, return nothing and abort these steps.
+    <li>If <var>hatena-id</var> ends by a <code>/</code> character, delete it from <var>hatena-id</var>.
+    <li>Otherwise, return nothing and abort these steps.
+    <li>Replace <code>%40</code> in <var>hatena-id</var> by <code>@</code>.
+    <li>If <var>hatena-id</var> contains characters other than <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and <code>@</code>, return nothing and abort these steps.
+    <li>Return <var>hatena-id</var>.
+  </ol>
+</div>
+
+<div class=section>
+<h2>Example</h2>
+
+<p>An HTML fragment:
+
+<pre><code>&lt;link rel=author href="http://www.hatena.ne.jp/ugomemohatena/"></code></pre>
+
+... describes that the author of the document has Hatena ID
+<code>ugomemohatena</code>.
+
+</div>
+
+<div class="section reference">
+<h2 class=no-num>References</h2>
+
+<div class="section reference normative">
+<h3 class=no-num>Normative references</h3>
+
+<dl>
+
+<dt id=ref-HTML>HTML
+
+<dd><cite><a
+href="http://www.whatwg.org/specs/web-apps/current-work/complete.html">
+HTML Standard</a></cite>, Ian Hickson, WHATWG Living Standard.
+
+<dt id=ref-RFC2119>RFC2119
+
+<dd><cite><a href="http://tools.ietf.org/html/rfc2119">Key words for
+use in RFCs to Indicate Requirement Levels</a></cite>, Scott Bradner,
+RFC 2119, IETF BCP 14, March 1997.
+
+</dl>
+
+</div>
+
+</div>
