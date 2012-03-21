@@ -1,7 +1,4 @@
 #data
-#id
-
-#data
 <link rel=author href="">
 #id
 
@@ -81,6 +78,19 @@ wakabatan
 
 #data
 <LINK REL='author' href="http://www.hatena.ne.jp/wakabatan/">
+#id
+wakabatan
+
+#data
+<LINK REL='author' href='http://www.hatena.ne.jp/wakabatan/'>
+#id
+wakabatan
+
+#data escaped
+<LINK REL='author'href
+   \u0009 =
+   \u0020
+'http://www.hatena.ne.jp/wakabatan/'>
 #id
 wakabatan
 
