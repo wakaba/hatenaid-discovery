@@ -1,0 +1,96 @@
+#data
+#id
+
+#data
+<script>
+<link rel=author href="http://www.hatena.com/hatenablog/">
+</script>
+#id
+
+#data
+<script><!--
+  <script>
+  </script>
+  <link rel=author href="http://www.hatena.com/hatenablog/">
+--></script>
+#id
+
+#data
+<script><!--
+  <script>
+  -->
+  </script>
+  <link rel=author href="http://www.hatena.com/hatenablog/">
+--></script>
+#id
+hatenablog
+
+#data
+<p class='
+<link rel=author href="http://www.hatena.com/hatenablog/">
+'>
+#id
+
+#data
+<hoge <link rel=author href="http://www.hatena.com/hatenablog/">
+#id
+
+#data
+<hoge<link rel=author href="http://www.hatena.com/hatenablog/">
+#id
+
+#data
+<hoge fuga<link rel=author href="http://www.hatena.com/hatenablog/">
+#id
+
+#data
+<!--<link rel=author href="http://www.hatena.com/hatenablog/">-->
+#id
+
+#data
+<div><![CDATA[
+<link rel=author href="http://www.hatena.com/hatenablog/">
+]]></div>
+#id
+
+#data
+<div><![CDATA[
+<link rel=author href="http://www.hatena.com/hatenablog/">
+<link rel=author href="http://www.hatena.com/hatenahaiku2/">
+]]></div>
+#id
+hatenahaiku2
+
+#data
+<noscript>
+<link rel=author href="http://www.hatena.com/hatenablog/">
+</noscript>
+#id-nonscripting
+hatenablog
+#id-scripting
+
+#data
+<noframes>
+<link rel=author href="http://www.hatena.com/hatenablog/">
+</noframes>
+#id
+
+#data
+<title>
+<link rel=author href="http://www.hatena.com/hatenablog/">
+</title>
+#id
+
+#data
+&lt;link rel=author href="http://www.hatena.com/hatenablog/">
+#id
+
+#data
+<!DOCTYPE HTML>
+<title>hoge</title>
+<p>foo
+<address>
+<a rel=author href="http://www.hatena.com/hatenablog/">hoge</a>
+</address>
+#id
+hatenablog
