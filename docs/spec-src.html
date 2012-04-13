@@ -73,20 +73,26 @@ version of the document is the only normative version.</p>
 <p class=section-info><em>This section is non‐normative.</em>
 
 <p>This document defines <dfn>Hatena ID Discovery Lite</dfn>, a
-lightweight syntax to embed the Hatena ID of the author to HTML pages
-and how to extract Hatena ID from such annotations.
+lightweight syntax to embed the <span>Hatena ID</span> of the author
+to HTML pages and how to extract <span>Hatena ID</span> from such
+annotations.
 
-<p>Although there is another technique to embed Hatena ID of the
-author, i.e. <a
-href="http://b.hatena.ne.jp/help/nocomment#pageauth">Account
-Auto-Discovery</a>, its terrible syntax makes it difficult to embed
-and extract the Hatena ID from Web pages, and is rarely used these
-days.
+<p>Although there is another technique to embed the <span>Hatena
+ID</span> of the author, i.e. <a
+href="http://b.hatena.ne.jp/help/nocomment#pageauth"><dfn>Account
+Auto-Discovery</dfn></a>, its terrible syntax makes it difficult to
+embed or to extract the <span>Hatena ID</span> within Web pages, and
+is rarely used these days.
 
-<p>Unlike Account Auto-Discovery, <span>Hatena ID Discovery
-Lite</span> provides a simple, both easy-to-write and easy-to-parse
-syntax for Hatena ID annotation, by defining the usage of standard
-HTML elements and attributes for this particular purpose.
+<p>Unlike <span>Account Auto-Discovery</span>, <span>Hatena ID
+Discovery Lite</span> provides a simple, both easy-to-write and
+easy-to-parse syntax for <span>Hatena ID</span> annotation, by
+defining the usage of standard HTML elements and attributes for this
+particular purpose.
+
+<p>This document deprecates the use of <span>Account
+Auto-Discovery</span> in favor of <span>Hatena ID Discovery
+Lite</span>.
 
 </div>
 
@@ -133,8 +139,30 @@ documents.)
 <div class=section>
 <h2>Authoring requirements</h2>
 
-<p>A <dfn>Hatena ID link</dfn> is an HTML element representing the
-Hatena ID of the author of the content described by the element.
+<p>A <a
+href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID"><dfn>Hatena
+ID</dfn></a> is a short string used to identify several kinds of
+objects, including users, in Hatena services.  As it is often embedded
+in URLs, it is sometimes referred to as <i>url_name</i> in Hatena
+systems.  A <span>Hatena ID</span> consists of one or more characters
+in the following ranges: <code>0</code>-<code>9</code>,
+<code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>,
+<code>-</code>, <code>_</code>, and <code>@</code>.  <span
+title="Hatena ID">Hatena IDs</span> are <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive">case-sensitive</a>.
+
+<div class="note memo">
+
+<p><span title="Hatena ID">Hatena IDs</span> are sometimes preceded by
+<code>id:</code>.  However, the <code>id:</code> prefix is not part of
+<span title="Hatena ID">Hatena IDs</span>.
+
+</div>
+
+<p>A <dfn>Hatena ID link</dfn> is an <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#html-elements">HTML
+element</a> representing the Hatena ID of the author of the content
+described by the element.
 
 <p>A <span>Hatena ID link</span> <em class=rfc2119>MUST</em> be an
 <code>a</code>, <code>area</code>, or <code>link</code> element <cite
@@ -159,8 +187,8 @@ types</a>:
   <li><code>http://www.hatena.com/<var>hatena-id</var>/</code>
 </ul>
 
-... where <var>hatena-id</var> is the Hatena ID of the author.  Any
-<code>@</code> character in <var>hatena-id</var> <em
+... where <var>hatena-id</var> is the <span>Hatena ID</span> of the
+author.  Any <code>@</code> character in <var>hatena-id</var> <em
 class=rfc2119>MAY</em> be percent-encoded.  The other characters in
 <var>hatena-id</var> <em class=rfc2119>MUST NOT</em> be
 percent-encoded.
@@ -187,8 +215,9 @@ author of an element, and how to parse <code>rel</code> attribute
 values, are <a
 href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">specified
 by the HTML Standard</a>.  Please note that <code>rel</code> attribute
-values are ASCII case-insensitive and might contain more than one
-values.
+values are <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#ascii-case-insensitive">ASCII
+case-insensitive</a> and might contain more than one values.
 
   <div class="note memo">
 
@@ -200,8 +229,9 @@ values.
 
   </div>
 
-<p>The Hatena ID of the author <em class=rfc2119>MUST</em> be
-extracted from an element by the following steps:
+<p>The <span>Hatena ID</span> of the author <em
+class=rfc2119>MUST</em> be extracted from an element by the following
+steps:
 
   <ol>
 
@@ -242,11 +272,11 @@ extracted from an element by the following steps:
 
   <div class="note memo">
 
-    <p>Please note that the Hatena ID returned by these steps might or
-    might not be a valid ID.  Please also note that an author can
-    markup anyone else's Hatena ID as the author of the document.
-    There is no formal way to test whether a <span>Hatena ID
-    Link</span> is correct or not.
+    <p>Please note that the <span>Hatena ID</span> returned by these
+    steps might or might not be a valid ID.  Please also note that an
+    author can markup anyone else's Hatena ID as the author of the
+    document.  There is no formal way to test whether a <span>Hatena
+    ID Link</span> is correct or not.
 
   </div>
 
@@ -275,8 +305,8 @@ documents with mutliple authors.
 
 <pre><code>&lt;link rel=author href="http://www.hatena.ne.jp/ugomemohatena/"></code></pre>
 
-... describes that the author of the document has Hatena ID
-<code>ugomemohatena</code>.
+... describes that the author of the document has <span>Hatena
+ID</span> <code>ugomemohatena</code>.
 
 </div>
 
