@@ -1,0 +1,105 @@
+#data
+<link rel=author href="http://www.hatena.com/hatenaland/">
+#mime
+text/plain
+#id
+
+#data
+<link rel=author href="http://www.hatena.com/hatenaland/">
+#mime
+text/html
+#id
+hatenaland
+
+#data
+<link rel=author href="http://www.hatena.com/hatenaland/">
+#mime
+application/octet-stream
+#id
+
+#data
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+#mime
+application/xml
+#id
+
+#data
+<link rel="author" href="http://www.hatena.com/hatenaland/"
+    xmlns="http://www.w3.org/1999/xhtml"/>
+#mime
+application/xhtml+xml
+#id
+hatenaland
+
+#data
+<LINK rel="author" href="http://www.hatena.com/hatenaland/"
+    xmlns="http://www.w3.org/1999/xhtml"/>
+#mime
+application/xhtml+xml
+#id
+
+#data
+<link rel="author" href="http://www.hatena.com/hatenaland/"
+    xmlns="http://www.w3.org/1999/xhtml">hoge</link>
+#mime
+application/xhtml+xml
+#id
+hatenaland
+
+#data
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+</html>
+#mime
+application/xhtml+xml
+#id
+hatenaland
+
+#data
+<html xmlns="http://www.w3.org/1999/xhtml">
+<![CDATA[
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+]]>
+</html>
+#mime
+application/xhtml+xml
+#id
+
+#data
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+</head>
+<body>aa</body>
+</html>
+#mime
+text/xml
+#id
+hatenaland
+
+#data
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+</head>
+<body>
+aa</body></html>
+#mime
+image/svg+xml
+#id
+
+#data
+<svg xmlns="http://www.w3.org/2000/svg">
+<foreignObject>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="author" href="http://www.hatena.com/hatenaland/"/>
+</head>
+<body>a</body>
+</html>
+</foreignObject>
+</svg>
+#mime
+image/svg+xml
+#id
+hatenaland
