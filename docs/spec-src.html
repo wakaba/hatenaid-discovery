@@ -164,16 +164,37 @@ class=rfc2119>MAY</em> be percent-encoded.  The other characters in
 <var>hatena-id</var> <em class=rfc2119>MUST NOT</em> be
 percent-encoded.
 
+  <div class="note memo">
+
+    <p>According to the HTML Standard, <code>a</code> or
+    <code>area</code> element with link type <code>author</code>
+    indicates the author of the nearest <code>article</code> element,
+    if any.
+
+  </div>
+
 </div>
 
 <div class=section>
 <h2>Implementation requirements</h2>
 
-<p>How to parse <code>rel</code> attribute values is <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">defined
-in the HTML Standard</a>.  Please note that <code>rel</code> attribute
+<p>How to find elements indicating the author of the document, or the
+author of an element, and how to parse <code>rel</code> attribute
+values, are <a
+href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">specified
+by the HTML Standard</a>.  Please note that <code>rel</code> attribute
 values are ASCII case-insensitive and might contain more than one
 values.
+
+  <div class="note memo">
+
+    <p>According to the HTML Standard, a <code>rev</code> attribute
+    with the value <code>made</code> must be treated as having the
+    <code>author</code> value specfiied in the <code>rel</code>
+    attribute.  The <code>rel</code> attribute can contain more than
+    one link types separated by white space characters.
+
+  </div>
 
 <p>The Hatena ID of the author <em class=rfc2119>MUST</em> be
 extracted by the following steps:
