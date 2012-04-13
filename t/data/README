@@ -15,6 +15,18 @@ Parser implementations:
   - Perl <https://github.com/wakaba/testdataparser>
   - JavaScript <https://github.com/wakaba/samijs/blob/master/sami/script/sami-test.js>
 
+Fields:
+
+  #data
+  Input data
+  #mime
+  MIME type of the |data| (|text/html| if omitted)
+  #id
+  Hatena ID of the document author, if any (None if omitted)
+  #articleid /n/
+  Hatena ID of the author of the /n/th |article| element, if any
+  (None if omitted)
+
 * Distribution
 
 Latest version of test data is available from the GitHub repository

@@ -1,0 +1,42 @@
+#data
+<link rel=author href="http://www.hatena.ne.jp/hatenaland/">
+<article>
+  <a rel=author href="http://www.hatena.com/hatenaworld/">foo</a>
+</article>
+#id
+hatenaland
+#articleid 0
+hatenaworld
+
+#data
+<link rel=author href="http://www.hatena.ne.jp/hatenaland/">
+<article>
+  <a rel=author href="http://www.hatena.com/hatenaworld/">foo</a>
+</article>
+<article>
+  <a rel=author href="http://www.hatena.com/hatenaland/">foo</a>
+</article>
+#id
+hatenaland
+#articleid 0
+hatenaworld
+#articleid 1
+hatenaland
+
+#data
+<article>
+</article>
+<article>
+  <a rel=author href="http://www.hatena.com/hatenaland/">foo</a>
+</article>
+#id
+#articleid 0
+#articleid 1
+hatenaland
+
+#data
+<section>
+  <a rel=author href="http://www.hatena.com/hatenaworld/">foo</a>
+</section>
+#id
+hatenaland

@@ -43,6 +43,16 @@ wakabatan
 wakabatan
 
 #data
+<link rel="alternate author" href="http://www.hatena.ne.jp/wakabatan/">
+#id
+wakabatan
+
+#data
+<link rel="me me me" href="http://www.hatena.ne.jp/wakabatan/">
+#id
+wakabatan
+
+#data
 <link rel="author index" href="http://www.hatena.ne.jp/wakabatan/">
 #id
 wakabatan
@@ -197,4 +207,31 @@ hoge@fuga
 
 #data
 <span rel=author href="http://www.hatena.ne.jp/wakabatan/">hoge</span>
+#id
+
+#data
+<link rev=made href="http://www.hatena.com/hatenaworld/">
+#id
+hatenaworld
+
+#data
+<A REV=made href="http://www.hatena.com/hatenaworld/">hogehoge</a>
+#id
+hatenaworld
+
+#data
+<a rev=made href="http://www.hatena.com/hatenaworld/">hogehoge</a>
+#id
+hatenaworld
+
+#data
+<a rev=Made href="http://www.hatena.com/hatenaworld/">hogehoge</a>
+#id
+
+#data
+<a rev="Made a" href="http://www.hatena.com/hatenaworld/">hogehoge</a>
+#id
+
+#data
+<a rel=made href="http://www.hatena.com/hatenaworld/">hogehoge</a>
 #id
