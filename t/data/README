@@ -1,0 +1,30 @@
+Hatena ID Discovery Lite Test Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Test data for Hatena ID Discovery Lite
+<http://wakaba.github.com/packages/hatenaid-discovery/docs/spec>.
+
+* Test data format
+
+Test data are encoded in the format similar to HTML parser test data,
+as described in
+<http://wiki.whatwg.org/wiki/Parser_tests#Tree_Construction_Tests>.
+
+Parser implementations:
+
+  - Perl <https://github.com/wakaba/testdataparser>
+  - JavaScript <https://github.com/wakaba/samijs/blob/master/sami/script/sami-test.js>
+
+* Distribution
+
+Latest version of test data is available from the GitHub repository
+<https://github.com/wakaba/hatenaid-discovery/tree/master/t/data>.
+
+* Author
+
+Wakaba <wakabatan@hatena.ne.jp>.
+
+* License
+
+Copyright 2012 Hatena.  You are granted a license to use, reproduce
+and create derivative works of these test data.
