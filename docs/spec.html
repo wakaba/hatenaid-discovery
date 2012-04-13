@@ -143,10 +143,10 @@ documents.)
 
 <p>A <a href=http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID><dfn id=hatena-id>Hatena
 ID</dfn></a> is a short string used to identify several kinds of
-objects, including users, in Hatena services.  As it is often embedded
-in URLs, it is sometimes referred to as <i>url_name</i> in Hatena
-systems.  A <a href=#hatena-id>Hatena ID</a> consists of one or more characters
-in the following ranges: <code>0</code>-<code>9</code>,
+objects, including users, in <a href=http://www.hatena.com/contact>Hatena services</a>.  As it is
+often embedded in URLs, it is sometimes referred to as <i>url_name</i>
+in Hatena systems.  A <a href=#hatena-id>Hatena ID</a> consists of one or more
+characters in the following ranges: <code>0</code>-<code>9</code>,
 <code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>,
 <code>-</code>, <code>_</code>, and <code>@</code>.  <a href=#hatena-id title="Hatena ID">Hatena IDs</a> are <a href=http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive>case-sensitive</a>.
 
@@ -159,8 +159,8 @@ in the following ranges: <code>0</code>-<code>9</code>,
 </p></div>
 
 <p>A <dfn id=hatena-id-link>Hatena ID link</dfn> is an <a href=http://www.whatwg.org/specs/web-apps/current-work/#html-elements>HTML
-element</a> representing the Hatena ID of the author of the content
-described by the element.
+element</a> representing the <a href=#hatena-id>Hatena ID</a> of the author of
+the content described by the element.
 
 </p><p>A <a href=#hatena-id-link>Hatena ID link</a> <em class=rfc2119>MUST</em> be an
 <code>a</code>, <code>area</code>, or <code>link</code> element <cite class="bibref normative">[<a href=#ref-HTML>HTML</a>]</cite>.
@@ -188,10 +188,10 @@ percent-encoded.
 
   <div class="note memo">
 
-    <p>According to the HTML Standard, <code>a</code> or
+    <p>According to the HTML Standard, an <code>a</code> or
     <code>area</code> element with link type <code>author</code>
     indicates the author of the nearest <code>article</code> element,
-    if any.
+    if there is one, or of the page as a whole, otherwise.
 
     <!-- At the time of writing, this is not applied to rel=me,
          but it should be IMHO... -->
