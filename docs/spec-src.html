@@ -201,23 +201,38 @@ values.
   </div>
 
 <p>The Hatena ID of the author <em class=rfc2119>MUST</em> be
-extracted by the following steps:
+extracted from an element by the following steps:
 
   <ol>
-    <li>If the element does not have the <code>href</code> attribute, return nothing and abort these steps.
-    <li>Let <var>hatena-id</var> be the <code>href</code> attribute value.
-    <li>If <var>hatena-id</var> prefix-matches <code>http://www.hatena.ne.jp/</code> literally, delete it from <var>hatena-id</var>.
-    <li>Otherwise, if <var>hatena-id</var> prefix-matches <code>http://www.hatena.com/</code> literally, delete it from <var>hatena-id</var>.
-    <li>Otherwise, return nothing and abort these steps.
-    <li>If <var>hatena-id</var> ends by a <code>/</code> character, delete it from <var>hatena-id</var>.
-    <li>Otherwise, return nothing and abort these steps.
-    <li>Replace <code>%40</code> in <var>hatena-id</var> by <code>@</code>.
 
-    <li>If <var>hatena-id</var> contains a character different from
-    any of <code>0</code>-<code>9</code>,
-    <code>A</code>-<code>Z</code>, <code>a</code>-<code>z</code>,
-    <code>-</code>, <code>_</code>, and <code>@</code>, return nothing
-    and abort these steps.
+    <li>If the element does not have the <code>href</code> attribute,
+    return nothing and abort these steps.
+
+    <li>Let <var>hatena-id</var> be the value of the <code>href</code>
+    attribute of the element.
+
+    <li>If <var>hatena-id</var> prefix-matches
+    <code>http://www.hatena.ne.jp/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    <li>Otherwise, if <var>hatena-id</var> prefix-matches
+    <code>http://www.hatena.com/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    <li>Otherwise, return nothing and abort these steps.
+
+    <li>If <var>hatena-id</var> ends by a <code>/</code> character,
+    delete it from <var>hatena-id</var>.
+
+    <li>Otherwise, return nothing and abort these steps.
+
+    <li>Replace any occurence of <code>%40</code> in <var>hatena-id</var> 
+    by <code>@</code>.
+
+    <li>If <var>hatena-id</var> contains a character not in the ranges
+    <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>,
+    <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and
+    <code>@</code>, return nothing and abort these steps.
 
     <li>If <var>hatena-id</var> is the empty string, return nothing
     and abort these steps.
@@ -239,6 +254,17 @@ extracted by the following steps:
 multiple <span title="Hatena ID Link">Hatena ID Links</span>.  Future
 version of this document might define the processing model for
 documents with mutliple authors.
+
+  <div class="note memo">
+
+    <p>It is encouraged for implementors to use the first <span>Hatena
+    ID Link</span> in <a
+    href="http://www.whatwg.org/specs/web-apps/current-work/#tree-order">tree
+    order</a> if there are multiple <span title="Hatena ID
+    Link">Hatena ID Links</span> until such a processing model is
+    defined.
+
+  </div>
 
 </div>
 
