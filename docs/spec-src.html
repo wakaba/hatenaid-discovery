@@ -137,7 +137,7 @@ documents.)
 </div>
 
 <div class=section>
-<h2>Authoring requirements</h2>
+<h2>Hatena ID</h2>
 
 <p>A <a
 href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID"><dfn>Hatena
@@ -159,6 +159,13 @@ href="http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive">case-se
 <span title="Hatena ID">Hatena IDs</span>.
 
 </div>
+</div>
+
+<div class=section>
+<h2>HTML <code>link</code> element</h2>
+
+<div class=section>
+<h3>Authoring requirements</h3>
 
 <p>A <dfn>Hatena ID link</dfn> is an <a
 href="http://www.whatwg.org/specs/web-apps/current-work/#html-elements">HTML
@@ -209,7 +216,7 @@ percent-encoded.
 </div>
 
 <div class=section>
-<h2>Implementation requirements</h2>
+<h3>Implementation requirements</h3>
 
 <p>How to find elements indicating the author of the document, or the
 author of an element, and how to parse <code>rel</code> attribute
@@ -298,9 +305,87 @@ documents with mutliple authors.
   </div>
 
 </div>
+</div>
 
 <div class=section>
-<h2>Example</h2>
+<h2>HTTP <dfn><code>X-Hatena-Author:</code></dfn> header</h2>
+
+<div class=section>
+<h3>Authoring requirements</h3>
+
+<p>An <span>HTTP message</span> <em class=rfc2119>MAY</em> contain an
+<code>X-Hatena-Author</code> <span>header field</span>.  The
+<span>header field</span> <em class=rfc2119>MUST</em> conform to the
+following ABNF <cite class="bibref normative">[<a
+href="#ref-ABNF">ABNF</a>]</cite> production rule:
+
+  <pre><code>x-hatena-author-header = "X-Hatena-Author:" <span>SP</span> <span title="Hatena ID">hatena-id</span></code></pre>
+
+... where <a
+href="http://tools.ietf.org/html/rfc5234#page-14"><dfn><code>SP</code></dfn></a>
+is defined in <a href="http://tools.ietf.org/html/std68">STD 68</a>.
+
+</div>
+
+<div class=section>
+<h3>Implementation requirements</h3>
+
+<p>The <span>Hatena ID</span> of the author <em
+class=rfc2119>MUST</em> be extracted from the <span>HTTP header</span>
+by the following steps:
+
+<ol>
+
+  <li>If the <span>HTTP message</span> does not contain the
+  <code>X-Hatena-Author:</code> <span>header field</span>, there is no
+  value to return and abort these steps.
+
+  <li>Otherwise, let <var>hatena-id</var> be the value of the first
+  <code>X-Hatena-Author:</code> <span>header field</span> in the
+  <span>HTTP message</span>.
+
+  <li>If <var>hatena-id</var> contains a 0x2C comma character
+  (<code>,</code>), delete the character and any following characters
+  from <var>hatena-id</var>.
+
+  <li>Delete any leading or trailing 0x0A, 0x09, 0x0D, and/or 0x20
+  characters from <var>hatena-id</var>.
+
+  <li>If <var>hatena-id</var> contains <code>%40</code> (string 0x25,
+  0x34, 0x30), replace it by a 0x40 commercial at character
+  (<code>@</code>).
+
+  <li>If <var>hatena-id</var> starts by <code>id:</code>,
+  <code>ID:</code>, <code>Id:</code>, or <code>iD:</code>, delete it
+  from <var>hatena-id</var>.
+
+  <li>If <var>hatena-id</var> contains a character not in the ranges
+  <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>,
+  <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and
+  <code>@</code>, return nothing and abort these steps.
+
+  <li>If <var>hatena-id</var> is the empty string, return nothing and
+  abort these steps.
+
+  <li>Return <var>hatena-id</var>.
+
+</ol>
+
+<p>This document does not define how to process a document containing
+multiple <code>X-Hatena-Author:</code> header fields.  Future version
+of this document might define the processing model for documents with
+mutliple authors.
+
+<p>Likewise, this document does not define how to process a document
+containing both <code>X-Hatena-Author:</code> header field and
+<span>Hatena ID link</code>.
+
+</div>
+
+</div>
+
+<div class=section>
+<h2>Examples</h2>
 
 <p>An HTML fragment:
 
@@ -308,6 +393,12 @@ documents with mutliple authors.
 
 ... describes that the author of the document has <span>Hatena
 ID</span> <code>ugomemohatena</code>.
+
+<p>The following HTTP header describes that the author of the document
+contained in the HTTP message has <span>Hatena ID</span>
+<code>hatenastar</code>:
+
+  <pre><code>X-Hatena-Author: hatenastar</code></pre>
 
 </div>
 
@@ -327,6 +418,13 @@ suite</a>.
 <h3 class=no-num>Normative references</h3>
 
 <dl>
+
+<dt id=ref-ABNF>ABNF
+
+<dd><cite><a href="http://tools.ietf.org/html/std68">Augmented BNF for
+Syntax Specifications: ABNF</a></cite>, Dave Crocker, Paul Overell,
+IETF Internet Standard (STD 68), <a
+href="http://tools.ietf.org/html/rfc5234">RFC 5234</a>.
 
 <dt id=ref-HTML>HTML
 
