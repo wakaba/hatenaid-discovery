@@ -30,7 +30,8 @@ document.
 <h2 class="no-toc no-num" id=abstract-0>Abstract</h2>
 
 <p>This document describes how to embed the Hatena ID of the author to
-HTML pages and how to extract Hatena ID from such annotations.
+HTML pages or HTTP header and how to extract Hatena ID from such
+annotations.
 
 </p></div>
 
@@ -99,7 +100,9 @@ is rarely used these days.
 Discovery Lite</a> provides a simple, both easy-to-write and
 easy-to-parse syntax for <a href=#hatena-id-0>Hatena ID</a> annotation, by
 defining the usage of standard HTML elements and attributes for this
-particular purpose.
+particular purpose.  In addition, it defines a simple HTTP header
+field to describe author name, for dynamically-generated Web pages and
+non-HTML documents.
 
 </p><p>This document deprecates the use of <a href=#account-auto-discovery>Account
 Auto-Discovery</a> in favor of <a href=#hatena-id-discovery-lite>Hatena ID Discovery
@@ -121,17 +124,25 @@ these steps") are to be interpreted with the meaning of the key word
 used in introducing the algorithm.
 
 </p><p>Conformance requirements phrased as algorithms or specific steps
-may be implemented in any manner, so long as the end result is
-equivalent. (In particular, the algorithms defined in this
-specification are intended to be easy to follow, and not intended to
-be performant.)
+<em class=rfc2119>MAY</em> be implemented in any manner, so long as
+the end result is equivalent. (In particular, the algorithms defined
+in this specification are intended to be easy to follow, and not
+intended to be performant.)
 
-</p><p>User agents may impose implementation-specific limits on otherwise
-unconstrained inputs, e.g. to prevent denial of service attacks, to
-guard against running out of memory, or to work around
-platform-specific limitations.
+</p><p>User agents <em class=rfc2119>MAY</em> impose
+implementation-specific limits on otherwise unconstrained inputs,
+e.g. to prevent denial of service attacks, to guard against running
+out of memory, or to work around platform-specific limitations.
 
-</p><p>Some conformance requirements are phrased as requirements on
+</p><div class="note memo">
+
+<p>For example, a user agent can choose to stop parsing of the
+<span>HTML document</span> after first 4096 bytes have been parsed to
+work around its memory limitation.
+
+</p></div>
+
+<p>Some conformance requirements are phrased as requirements on
 elements or attributes. Such requirements fall into two categories:
 those describing content model restrictions, and those describing
 implementation behavior. Those in the former category are requirements
@@ -329,8 +340,8 @@ by the following steps:
 </p><ol>
 
   <li>If the <span>HTTP message</span> does not contain the
-  <a href=#http-x-hatena-author:-header><code>X-Hatena-Author:</code></a> <span>header field</span>, there is no
-  value to return and abort these steps.
+  <a href=#http-x-hatena-author:-header><code>X-Hatena-Author:</code></a> <span>header field</span>, return
+  nothing and abort these steps.
 
   </li><li>Otherwise, let <var>hatena-id</var> be the value of the first
   <a href=#http-x-hatena-author:-header><code>X-Hatena-Author:</code></a> <span>header field</span> in the
@@ -347,9 +358,9 @@ by the following steps:
   0x34, 0x30), replace it by a 0x40 commercial at character
   (<code>@</code>).
 
-  </li><li>If <var>hatena-id</var> starts by <code>id:</code>,
-  <code>ID:</code>, <code>Id:</code>, or <code>iD:</code>, delete it
-  from <var>hatena-id</var>.
+  </li><li>If first three characters of <var>hatena-id</var>, if any, is
+  <code>id:</code>, <code>ID:</code>, <code>Id:</code>, or
+  <code>iD:</code>, delete it from <var>hatena-id</var>.
 
   </li><li>If <var>hatena-id</var> contains a character not in the ranges
   <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>,
