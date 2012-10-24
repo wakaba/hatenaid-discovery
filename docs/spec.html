@@ -63,7 +63,7 @@ version of the document is the only normative version.</p>
 <ol class=toc>
  <li><a href=#introduction><span class=secno>1 </span>Introduction</a></li>
  <li><a href=#conformance><span class=secno>2 </span>Conformance</a></li>
- <li><a href=#hatena-id><span class=secno>3 </span>Hatena ID</a></li>
+ <li><a href=#hatena-id-0><span class=secno>3 </span>Hatena ID</a></li>
  <li><a href=#html-link-element><span class=secno>4 </span>HTML <code>link</code> element</a>
   <ol>
    <li><a href=#authoring-requirements><span class=secno>4.1 </span>Authoring requirements</a></li>
@@ -86,19 +86,19 @@ version of the document is the only normative version.</p>
 <p class=section-info><em>This section is non‐normative.</em>
 
 </p><p>This document defines <dfn id=hatena-id-discovery-lite>Hatena ID Discovery Lite</dfn>, a
-lightweight syntax to embed the <a href=#hatena-id-0>Hatena ID</a> of the author
-to HTML pages and how to extract <a href=#hatena-id-0>Hatena ID</a> from such
+lightweight syntax to embed the <a href=#hatena-id>Hatena ID</a> of the author
+to HTML pages and how to extract <a href=#hatena-id>Hatena ID</a> from such
 annotations.
 
-</p><p>Although there is another technique to embed the <a href=#hatena-id-0>Hatena
+</p><p>Although there is another technique to embed the <a href=#hatena-id>Hatena
 ID</a> of the author, i.e. <a href=http://b.hatena.ne.jp/help/nocomment#pageauth><dfn id=account-auto-discovery>Account
 Auto-Discovery</dfn></a>, its terrible syntax makes it difficult to
-embed or to extract the <a href=#hatena-id-0>Hatena ID</a> within Web pages, and
+embed or to extract the <a href=#hatena-id>Hatena ID</a> within Web pages, and
 is rarely used these days.
 
 </p><p>Unlike <a href=#account-auto-discovery>Account Auto-Discovery</a>, <a href=#hatena-id-discovery-lite>Hatena ID
 Discovery Lite</a> provides a simple, both easy-to-write and
-easy-to-parse syntax for <a href=#hatena-id-0>Hatena ID</a> annotation, by
+easy-to-parse syntax for <a href=#hatena-id>Hatena ID</a> annotation, by
 defining the usage of standard HTML elements and attributes for this
 particular purpose.  In addition, it defines a simple HTTP header
 field to describe author name, for dynamically-generated Web pages and
@@ -157,24 +157,23 @@ documents.)
 </p></div>
 
 <div class=section>
-<h2 id=hatena-id><span class=secno>3 </span>Hatena ID</h2>
+<h2 id=hatena-id-0><span class=secno>3 </span>Hatena ID</h2>
 
-<p>The <a href=http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID><dfn id=hatena-id-0>Hatena
-ID</dfn></a> is the short string identifying some kind of object (such
-as user and group) in <a href=http://en.wikipedia.org/wiki/Hatena_(company)><!--<a
+<p>The <a href=http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID><dfn id=hatena-id>Hatena ID</dfn></a> is the short string identifying some
+kind of object (such as user and group) in <a href=http://en.wikipedia.org/wiki/Hatena_(company)><!--<a
 href="http://www.hatena.ne.jp/company/service">-->Hatena services</a>.
 As it is often embedded in URLs, it is sometimes referred to as
-<i>url_name</i> in Hatena systems.  A <a href=#hatena-id-0>Hatena ID</a> consists
+<i>url_name</i> in Hatena systems.  A <a href=#hatena-id>Hatena ID</a> consists
 of one or more characters in the following ranges:
 <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>,
 <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and
-<code>@</code>.  <a href=#hatena-id-0 title="Hatena ID">Hatena IDs</a> are <a href=http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive>case-sensitive</a>.
+<code>@</code>.  <a href=#hatena-id title="Hatena ID">Hatena IDs</a> are <a href=http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive>case-sensitive</a>.
 
 </p><div class="note memo">
 
-<p><a href=#hatena-id-0 title="Hatena ID">Hatena IDs</a> are sometimes preceded by
+<p><a href=#hatena-id title="Hatena ID">Hatena IDs</a> are sometimes preceded by
 <code>id:</code>.  However, the <code>id:</code> prefix is not part of
-<a href=#hatena-id-0 title="Hatena ID">Hatena IDs</a>.
+<a href=#hatena-id title="Hatena ID">Hatena IDs</a>.
 
 </p></div>
 </div>
@@ -186,7 +185,7 @@ of one or more characters in the following ranges:
 <h3 id=authoring-requirements><span class=secno>4.1 </span>Authoring requirements</h3>
 
 <p>A <dfn id=hatena-id-link>Hatena ID link</dfn> is an <a href=http://www.whatwg.org/specs/web-apps/current-work/#html-elements>HTML
-element</a> representing the <a href=#hatena-id-0>Hatena ID</a> of the author of
+element</a> representing the <a href=#hatena-id>Hatena ID</a> of the author of
 the content described by the element.
 
 </p><p>A <a href=#hatena-id-link>Hatena ID link</a> <em class=rfc2119>MUST</em> be an
@@ -208,7 +207,7 @@ types</a>:
   </li><li><code>http://www.hatena.com/<var>hatena-id</var>/</code>
 </li></ul>
 
-... where <var>hatena-id</var> is the <a href=#hatena-id-0>Hatena ID</a> of the
+... where <var>hatena-id</var> is the <a href=#hatena-id>Hatena ID</a> of the
 author.  Any <code>@</code> character in <var>hatena-id</var> <em class=rfc2119>MAY</em> be percent-encoded.  The other characters in
 <var>hatena-id</var> <em class=rfc2119>MUST NOT</em> be
 percent-encoded.
@@ -247,7 +246,7 @@ case-insensitive</a> and might contain more than one values.
 
   </p></div>
 
-<p>The <a href=#hatena-id-0>Hatena ID</a> of the author <em class=rfc2119>MUST</em> be extracted from an element by the following
+<p>The <a href=#hatena-id>Hatena ID</a> of the author <em class=rfc2119>MUST</em> be extracted from an element by the following
 steps:
 
   </p><ol>
@@ -289,7 +288,7 @@ steps:
 
   <div class="note memo">
 
-    <p>Please note that the <a href=#hatena-id-0>Hatena ID</a> returned by these
+    <p>Please note that the <a href=#hatena-id>Hatena ID</a> returned by these
     steps might or might not be a valid ID.  Please also note that an
     author can markup anyone else's Hatena ID as the author of the
     document.  There is no formal way to test whether a <a href=#hatena-id-link>Hatena
@@ -326,7 +325,7 @@ documents with mutliple authors.
 <span>header field</span> <em class=rfc2119>MUST</em> conform to the
 following ABNF <cite class="bibref normative">[<a href=#ref-ABNF>ABNF</a>]</cite> production rule:
 
-  </p><pre><code>x-hatena-author-header = "X-Hatena-Author:" <a href=#sp>SP</a> <a href=#hatena-id-0 title="Hatena ID">hatena-id</a></code></pre>
+  </p><pre><code>x-hatena-author-header = "X-Hatena-Author:" <a href=#sp>SP</a> <a href=#hatena-id title="Hatena ID">hatena-id</a></code></pre>
 
 ... where <a href=http://tools.ietf.org/html/rfc5234#page-14><dfn id=sp><code>SP</code></dfn></a>
 is defined in <a href=http://tools.ietf.org/html/std68>STD 68</a>.
@@ -336,7 +335,7 @@ is defined in <a href=http://tools.ietf.org/html/std68>STD 68</a>.
 <div class=section>
 <h3 id=implementation-requirements-0><span class=secno>5.2 </span>Implementation requirements</h3>
 
-<p>The <a href=#hatena-id-0>Hatena ID</a> of the author <em class=rfc2119>MUST</em> be extracted from the <span>HTTP header</span>
+<p>The <a href=#hatena-id>Hatena ID</a> of the author <em class=rfc2119>MUST</em> be extracted from the <span>HTTP header</span>
 by the following steps:
 
 </p><ol>
@@ -396,11 +395,11 @@ containing both <a href=#http-x-hatena-author:-header><code>X-Hatena-Author:</co
 
 </p><pre><code>&lt;link rel=author href="http://www.hatena.ne.jp/ugomemohatena/"&gt;</code></pre>
 
-... describes that the author of the document has <a href=#hatena-id-0>Hatena
+... describes that the author of the document has <a href=#hatena-id>Hatena
 ID</a> <code>ugomemohatena</code>.
 
 <p>The following HTTP header describes that the author of the document
-contained in the HTTP message has <a href=#hatena-id-0>Hatena ID</a>
+contained in the HTTP message has <a href=#hatena-id>Hatena ID</a>
 <code>hatenastar</code>:
 
   </p><pre><code>X-Hatena-Author: hatenastar</code></pre>
