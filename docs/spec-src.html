@@ -219,6 +219,8 @@ types</a>:
 <ul>
   <li><code>http://www.hatena.ne.jp/<var>hatena-id</var>/</code>
   <li><code>http://www.hatena.com/<var>hatena-id</var>/</code>
+  <li><code>http://profile.hatena.ne.jp/<var>hatena-id</var>/</code>
+  <li><code>http://profile.hatena.com/<var>hatena-id</var>/</code>
 </ul>
 
 ... where <var>hatena-id</var> is the <span>Hatena ID</span> of the
@@ -281,6 +283,14 @@ steps:
 
     <li>Otherwise, if <var>hatena-id</var> prefix-matches
     <code>http://www.hatena.com/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    <li>Otherwise, if <var>hatena-id</var> prefix-matches
+    <code>http://profile.hatena.ne.jp/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    <li>Otherwise, if <var>hatena-id</var> prefix-matches
+    <code>http://profile.hatena.com/</code> literally, delete it from
     <var>hatena-id</var>.
 
     <li>Otherwise, return nothing and abort these steps.

@@ -8,7 +8,7 @@
 
 <h1 class="no-toc no-num">Hatena ID Discovery Lite</h1>
 
-<h2 class="no-toc no-num" id=living-standard-date>Living Standard 24 October 2012</h2>
+<h2 class="no-toc no-num" id=living-standard-date>Living Standard 20 June 2013</h2>
 
 <dl class=versions-uri>
 <dt>Latest Version</dt>
@@ -218,6 +218,8 @@ types</a>:
 </p><ul>
   <li><code>http://www.hatena.ne.jp/<var>hatena-id</var>/</code>
   </li><li><code>http://www.hatena.com/<var>hatena-id</var>/</code>
+  </li><li><code>http://profile.hatena.ne.jp/<var>hatena-id</var>/</code>
+  </li><li><code>http://profile.hatena.com/<var>hatena-id</var>/</code>
 </li></ul>
 
 ... where <var>hatena-id</var> is the <a href=#hatena-id>Hatena ID</a> of the
@@ -276,6 +278,14 @@ steps:
 
     </li><li>Otherwise, if <var>hatena-id</var> prefix-matches
     <code>http://www.hatena.com/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    </li><li>Otherwise, if <var>hatena-id</var> prefix-matches
+    <code>http://profile.hatena.ne.jp/</code> literally, delete it from
+    <var>hatena-id</var>.
+
+    </li><li>Otherwise, if <var>hatena-id</var> prefix-matches
+    <code>http://profile.hatena.com/</code> literally, delete it from
     <var>hatena-id</var>.
 
     </li><li>Otherwise, return nothing and abort these steps.
