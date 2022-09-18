@@ -4,7 +4,7 @@
 
 <title>Hatena ID Discovery Lite</title>
 
-<link rel=stylesheet href="http://suika.fam.cx/www/style/html/spec">
+<link rel=stylesheet href="https://suika.suikawiki.org/www/style/html/spec">
 
 <div class="header">
 
@@ -14,19 +14,19 @@
 
 <dl class="versions-uri">
 <dt>Latest Version</dt>
-  <dd><code class="URI">&lt;<a href="http://wakaba.github.com/packages/hatenaid-discovery/docs/spec"
+  <dd><code class="URI">&lt;<a href="https://wakaba.github.com/packages/hatenaid-discovery/docs/spec"
       rel=canonical>http://wakaba.github.com/packages/hatenaid-discovery/docs/spec</a>&gt;</code></dd>
 <dt>Version History</dt>
   <dd><code class=URI>&lt;<a href="https://github.com/wakaba/hatenaid-discovery/commits/master/docs/spec-src.html">https://github.com/wakaba/hatenaid-discovery/commits/master/docs/spec-src.html</a>&gt;</code></dd>
 <dt id=author>Author</dt>
-  <dd><a href="http://www.hatena.com/wakabatan/" rel="author"
+  <dd><a href="https://www.hatena.com/wakabatan/" rel="author"
       lang=ja>Wakaba (id:wakabatan)</a>
   <code class="mail">&lt;<a href="mailto:wakabatan@hatena.ne.jp" rel="author"
       >wakabatan@hatena.ne.jp</a>&gt;</code></dd>
 </dl>
 
 <p class="copyright" lang="en">&#xA9; 2012-[YEAR] <a
-href="http://www.hatena.com/contact">Hatena</a>.  You are granted a
+href="https://www.hatena.com/contact">Hatena</a>.  You are granted a
 license to use, reproduce and create derivative works of this
 document.
 
@@ -80,7 +80,7 @@ annotations.
 
 <p>Although there is another technique to embed the <span>Hatena
 ID</span> of the author, i.e. <a
-href="http://b.hatena.ne.jp/help/nocomment#pageauth"><dfn>Account
+href="https://b.hatena.ne.jp/help/nocomment#pageauth"><dfn>Account
 Auto-Discovery</dfn></a>, its terrible syntax makes it difficult to
 embed or to extract the <span>Hatena ID</span> within Web pages, and
 is rarely used these days.
@@ -106,7 +106,7 @@ Lite</span>.
 NOT</em>", "<em class=rfc2119>SHOULD</em>", and "<em
 class=rfc2119>MAY</em>" in the normative parts of this document are to
 be interpreted as described in <a
-href="http://tools.ietf.org/html/rfc2119">RFC 2119</a> <cite
+href="https://tools.ietf.org/html/rfc2119">RFC 2119</a> <cite
 class="bibref normative">[<a href="#ref-RFC2119">RFC2119</a>]</cite>.
 
 <p>Requirements phrased in the imperative as part of algorithms (such
@@ -152,10 +152,10 @@ documents.)
 <h2>Hatena ID</h2>
 
 <p>The <a
-href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID"><dfn
+href="https://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CAID"><dfn
 id=hatena-id>Hatena ID</dfn></a> is a short string identifying some
 kind of object (such as user and group) in <a
-href="http://en.wikipedia.org/wiki/Hatena_(company)"><!--<a
+href="https://en.wikipedia.org/wiki/Hatena_(company)"><!--<a
 href="http://www.hatena.ne.jp/company/service">-->Hatena services</a>.
 As it is often embedded in URLs, it is sometimes referred to as
 <i>url_name</i> in Hatena systems.  A <span>Hatena ID</span> consists
@@ -163,7 +163,7 @@ of one or more characters in the following ranges:
 <code>0</code>-<code>9</code>, <code>A</code>-<code>Z</code>,
 <code>a</code>-<code>z</code>, <code>-</code>, <code>_</code>, and
 <code>@</code>.  <span title="Hatena ID">Hatena IDs</span> are <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#case-sensitive">case-sensitive</a>.
+href="https://www.whatwg.org/specs/web-apps/current-work/#case-sensitive">case-sensitive</a>.
 
 <div class="note memo">
 
@@ -194,7 +194,7 @@ characters for a <span>Hatena ID</span>.
 <h3>Authoring requirements</h3>
 
 <p>A <dfn>Hatena ID link</dfn> is an <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#html-elements">HTML
+href="https://www.whatwg.org/specs/web-apps/current-work/#html-elements">HTML
 element</a> representing the <span>Hatena ID</span> of the author of
 the content described by the element.
 
@@ -204,7 +204,7 @@ class="bibref normative">[<a href="#ref-HTML">HTML</a>]</cite>.
 
 <p>The <code>rel</code> attribute of a <span>Hatena ID link</span> <em
 class=rfc2119>MUST</em> contain at least one of following <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">link
+href="https://www.whatwg.org/specs/web-apps/current-work/#linkTypes">link
 types</a>:
 
 <ul>
@@ -249,10 +249,10 @@ percent-encoded.
 <p>How to find elements indicating the author of the document, or the
 author of an element, and how to parse <code>rel</code> attribute
 values, are <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#linkTypes">specified
+href="https://www.whatwg.org/specs/web-apps/current-work/#linkTypes">specified
 by the HTML Standard</a>.  Please note that <code>rel</code> attribute
 values are <a
-href="http://www.whatwg.org/specs/web-apps/current-work/#ascii-case-insensitive">ASCII
+href="https://www.whatwg.org/specs/web-apps/current-work/#ascii-case-insensitive">ASCII
 case-insensitive</a> and might contain more than one values.
 
   <div class="note memo">
@@ -333,7 +333,7 @@ documents with mutliple authors.
 
     <p>It is encouraged for implementors to use the first <span>Hatena
     ID Link</span> in <a
-    href="http://www.whatwg.org/specs/web-apps/current-work/#tree-order">tree
+    href="https://www.whatwg.org/specs/web-apps/current-work/#tree-order">tree
     order</a> if there are multiple <span title="Hatena ID
     Link">Hatena ID Links</span> until such a processing model is
     defined.
@@ -358,8 +358,8 @@ href="#ref-ABNF">ABNF</a>]</cite> production rule:
   <pre><code>x-hatena-author-header = "X-Hatena-Author:" <span>SP</span> <span title="Hatena ID">hatena-id</span></code></pre>
 
 ... where <a
-href="http://tools.ietf.org/html/rfc5234#page-14"><dfn><code>SP</code></dfn></a>
-is defined in <a href="http://tools.ietf.org/html/std68">STD 68</a>.
+href="https://tools.ietf.org/html/rfc5234#page-14"><dfn><code>SP</code></dfn></a>
+is defined in <a href="https://tools.ietf.org/html/std68">STD 68</a>.
 
 </div>
 
@@ -457,20 +457,20 @@ suite</a>.
 
 <dt id=ref-ABNF>ABNF
 
-<dd><cite><a href="http://tools.ietf.org/html/std68">Augmented BNF for
+<dd><cite><a href="https://tools.ietf.org/html/std68">Augmented BNF for
 Syntax Specifications: ABNF</a></cite>, Dave Crocker, Paul Overell,
 IETF Internet Standard (STD 68), <a
-href="http://tools.ietf.org/html/rfc5234">RFC 5234</a>.
+href="https://tools.ietf.org/html/rfc5234">RFC 5234</a>.
 
 <dt id=ref-HTML>HTML
 
 <dd><cite><a
-href="http://www.whatwg.org/specs/web-apps/current-work/complete.html">
+href="https://www.whatwg.org/specs/web-apps/current-work/complete.html">
 HTML Standard</a></cite>, Ian Hickson, WHATWG Living Standard.
 
 <dt id=ref-RFC2119>RFC2119
 
-<dd><cite><a href="http://tools.ietf.org/html/rfc2119">Key words for
+<dd><cite><a href="https://tools.ietf.org/html/rfc2119">Key words for
 use in RFCs to Indicate Requirement Levels</a></cite>, Scott Bradner,
 RFC 2119, IETF BCP 14, March 1997.
 
